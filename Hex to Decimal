@@ -1,0 +1,11 @@
+/*
+
+Complete the function which converts hex number (given as a string) to a decimal number.
+
+*/
+
+def hex_to_dec(s):
+    total = 0
+    for i in s:
+        total = total * 16 + int(i,16)
+    return total
