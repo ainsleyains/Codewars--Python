@@ -1,0 +1,11 @@
+/*
+
+I have four positive integers, A, B, C and D, where A < B < C < D. The input is a list of the integers A, B, C, D, AxB, BxC, CxD, DxA in some order. Your task is to return the value of D.
+
+*/
+
+
+
+def alphabet(ns):
+    num = sorted(ns)
+    return num[7] / num[3 if num[0]*num[1] == num[2] else 2]
