@@ -17,8 +17,11 @@ This is indexed from [1..n] (not zero indexed!)
 
 */
 
+def vowel_indices(word):
+	return [i for i, e in enumerate(word,1) if e.lower() in 'aeiouy']
 
 
+#Alternative way
 import re
 def vowel_indices(word):
     res = []
