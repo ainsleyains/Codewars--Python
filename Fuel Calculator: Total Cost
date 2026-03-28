@@ -1,0 +1,34 @@
+/*
+
+In this kata you will have to write a function that takes litres and price_per_litre (in dollar) as arguments.
+
+Purchases of 2 or more litres get a discount of 5 cents per litre, purchases of 4 or more litres get a discount of 10 cents per litre, and so on every two litres, up to a maximum discount of 25 cents per litre. But total discount per litre cannot be more than 25 cents. Return the total cost rounded to 2 decimal places. Also you can guess that there will not be negative or non-numeric inputs.
+
+Good Luck!
+
+Note
+
+1 Dollar = 100 Cents
+
+
+
+*/
+
+
+
+def fuel_price(litres, price_per_litre):
+    a = 0.05 
+    b = 0.10 
+    c = 0.15 
+    d = 0.2 
+    e = 0.25
+    if (litres >= 2 and litres < 4):
+        return round((litres * price_per_litre - litres * a) * 100 ,2)/ 100
+    elif (litres >= 4 and litres < 6):
+        return round((litres * price_per_litre - litres * b) * 100,2) / 100
+    elif (litres >= 6 and litres < 8):
+        return round((litres * price_per_litre - litres * c) * 100,2) / 100
+    elif (litres >= 8 and litres < 10):
+        return round((litres * price_per_litre - litres * d) * 100,2) / 100
+    else:
+        return round((litres * price_per_litre - litres * e) * 100,2) / 100
