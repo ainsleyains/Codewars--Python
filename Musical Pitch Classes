@@ -1,0 +1,20 @@
+/*
+
+
+The sharp sign ("♯") is essentially an increment operator, so "C♯" (pronounced "C sharp") refers to one note higher than C, which has a value of 1, whereas F♯ has a value of 6. Since Codewars doesn't allow the sharp sign, we'll use a number sign ("#") instead.
+
+The flat sign ("♭") is the opposite of a sharp, meaning one note lower. F♭ has a value of 4, and C♭ has a value of 11 (going below 0 cycles back to 11, the twelve-note system is cyclical). Since Codewars doesn't allow the flat sign, we'll use a lowercase "b" instead.
+
+Return the appropriate null value in your language (JS: null, Python: None, Ruby: nil) for invalid input.
+
+
+*/
+
+
+
+def pitch_class(note: str) -> int | None:
+    dic = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
+    mod = {'': 0, '#': 1, 'b': -1}
+    if not note or note[0] not in dic or note[1:] not in mod:
+        return None
+    return (dic[note[0]] + mod[note[1:]]) % 12
