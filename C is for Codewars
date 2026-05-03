@@ -1,0 +1,40 @@
+/*
+
+Task:
+
+Build a string representing a capital letter C of a given size out of 'C' characters.
+
+Examples:
+
+generate_C(1) 
+should return this string:
+
+CCCCC
+C
+C
+C
+CCCCC
+generate_C(2) 
+should be
+
+CCCCCCCCCC
+CCCCCCCCCC
+CC
+CC
+CC
+CC
+CC
+CC
+CCCCCCCCCC
+CCCCCCCCCC
+
+
+*/
+
+
+
+def generate_C(size):
+    full = 'C' * (5 * size)      
+    short = 'C' * size           
+    rows = [full] * size + [short] * (3 * size) + [full] * size
+    return '\n'.join(rows)
