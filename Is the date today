@@ -1,0 +1,16 @@
+/*
+
+Write a simple function that takes as a parameter a date object and returns a boolean value representing whether the date is today or not.
+
+Make sure that your function does not return a false positive by only checking the day.
+
+
+*/
+
+
+
+from datetime import datetime, date
+
+def is_today(v : datetime) -> bool:
+
+    return v.date() == date.today()
