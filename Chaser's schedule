@@ -1,0 +1,43 @@
+/*
+
+Example:
+
+Given s = 2 and t = 4.
+We could schedule when runner should sprint so we could get these possible sequences:
+
+Seq.: RRRR
+=> s + s + s + s
+=> 2 + 2 + 2 + 2 = 8
+Seq.: RRRS
+=> s + s + s + s*2
+=> 2 + 2 + 2 + 2*2 = 10
+Seq.: RRSR
+=> s + s + s*2 + (s-1)
+=> 2 + 2 + 2*2 + (2-1) = 9
+Seq.: RSRR
+=> s + s*2 + (s-1) + (s-1)
+=> 2 + 2*2 + (2-1) + (2-1) = 8
+Seq.: RSRS
+=> s + s*2 + (s-1) + (s-1)*2
+=> 2 + 2*2 + (2-1) + (2-1)*2 = 9
+Seq.: SRRR
+=> s*2 + (s-1) + (s-1) + (s-1)
+=> 2*2 + (2-1) + (2-1) + (2-1) = 7
+Seq.: SRRS
+=> s*2 + (s-1) + (s-1) + (s-1)*2
+=> 2*2 + (2-1) + (2-1) + (2-1)*2 = 8
+Seq.: SRSR
+=> s*2 + (s-1) + (s-1)*2 + (s-1-1)
+=> 2*2 + (2-1) + (2-1)*2 + (2-1-1) = 7
+
+Where:
+- R: Normal Run / Recovery
+- S: Sprint
+Based on above sequences, the maximum possible distance d is 10.
+
+
+*/
+
+def solution(s, t):
+    p = min((t-1)//2, s//3)
+    return t *s + (p+1) * s - 3 * (p+1) * p // 2 if t else 0 
